@@ -1,12 +1,19 @@
 #ifndef FONCTION_H
 #define FONCTION_H
 
+typedef enum {
+    ACTIVE,
+    CLOSED,
+}StatusCompte;
 typedef struct Compte
 {
     int idCompte;
     int RIB;
     float solde;
+    StatusCompte status;
+
 } Compte;
+
 
 typedef struct Client
 {
@@ -35,6 +42,7 @@ void afficherMenuVirement(Banque *banque);
 void afficherMenuCreationCompte(Banque *banque);
 void afficherMenuSuppressionCompte(Banque *banque);
 void afficherMenuModificationCompte(Banque *banque);
+void afficherMenuChoixClient(Banque *banque);
 void afficherMenuConsultationSolde(Banque *banque);
 void afficherMenuCreationClient(Banque *banque);
 void afficherMenuSuppressionClient(Banque *banque);
@@ -42,6 +50,9 @@ void afficherMenuModificationClient(Banque *banque);
 void afficherMenuConsultationClients(Banque *banque);
 void afficherMenuConsultationComptes(Banque *banque);
 void afficherInformationsClient(Banque *banque);
+void chargerBanque(Banque *banque);
+void pauseEtNettoie();
 int vreficationIdClient(Banque *banque, int idClient);
-
+void statusClientsComptes(Banque *banque);
+void sauvegarderBanque(Banque *banque); 
 #endif

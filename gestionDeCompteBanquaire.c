@@ -22,6 +22,7 @@ int main()
     while (1)
     {
         afficherMenuPrincipal(&maBanque);
+        
     }
     // Libération de la mémoire allouée
     for (int i = 0; i < MAX_CLIENTS; i++)
